@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { title } from 'process';
 import React, { useEffect, useState } from 'react';
-import HandleToDo from './components/TodoList';
 import InputField from './components/Inputfield';
 import TodoList from './components/TodoList';
+import EditTodo from './components/EditTodo';
 
 export type Task = {
   id: number,
@@ -39,12 +38,24 @@ function App() {
         
     }
 
+    function editTask (tasktoEdit: Task){
+        axios.put<Task>("http://localhost:3001/tasks",tasktoEdit).then(() =>{
+          loaddata();
+          SetTasktoEdit(emptyTask);
+        })
+    }
+
+
+    function changeTask(task: Task){
+        SetTasktoEdit(task);
+    }
 
   return (
     <div className="App">
       <h1 id="title">Meine Todo Liste</h1>
       <InputField input={tasktoEdit} addTask={postTask}/>
-      <TodoList tasks={task} deleteTask={deleteTask}/>
+      <TodoList tasks={task} deleteTask={deleteTask} editTask={changeTask}/>
+      <EditTodo tasks={tasktoEdit} editTask={editTask}/>
     </div>
   );
 }
