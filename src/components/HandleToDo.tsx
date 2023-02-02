@@ -1,13 +1,17 @@
 import React from "react";
+import { Task } from "../App";
 
 export interface HandleProps{
-    inputValue: String;
+    tasks: Task[];
+    deleteTask: (task:Task) => void;
 }
 
-const HandleToDo: React.FC<HandleProps> = ()=>{
+function HandleToDo(props: HandleProps){
     return(
         <div>
-
+            {props.tasks.map((todo:Task)=>(
+                <li key={todo.id}>{todo.title}<button onClick={()=> props.deleteTask(todo)}>delete</button></li>
+            ))}
         </div>
     )
 }

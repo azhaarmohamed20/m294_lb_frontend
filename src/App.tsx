@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <h1 id="title">Meine Todo Liste</h1>
       <InputField input={inputs}/>
-      <HandleToDo inputValue={inputs}/>
+      <HandleToDo tasks={task} deleteTask={deleteTask}/>
     </div>
   );
 }
