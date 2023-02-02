@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { title } from 'process';
 import React, { useEffect, useState } from 'react';
-import HandleToDo from './components/HandleToDo';
+import HandleToDo from './components/TodoList';
 import InputField from './components/Inputfield';
+import TodoList from './components/TodoList';
 
 export type Task = {
   id: number,
@@ -37,7 +38,7 @@ function App() {
     <div className="App">
       <h1 id="title">Meine Todo Liste</h1>
       <InputField input={inputs}/>
-      <HandleToDo tasks={task} deleteTask={deleteTask}/>
+      <TodoList tasks={task} deleteTask={deleteTask}/>
     </div>
   );
 }

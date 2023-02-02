@@ -6,7 +6,7 @@ export interface HandleProps{
     deleteTask: (task:Task) => void;
 }
 
-function HandleToDo(props: HandleProps){
+function TodoList(props: HandleProps){
     return(
         <div>
             {props.tasks.map((todo:Task)=>(
@@ -16,4 +16,4 @@ function HandleToDo(props: HandleProps){
     )
 }
 
-export default HandleToDo;
+export default TodoList;

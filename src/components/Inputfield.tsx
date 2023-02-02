@@ -24,11 +24,12 @@ function InputField(props: Inputprops){
 
     return(
         <form>
-            <label htmlFor="EingabeFeld">Task eingeben: </label>
+            <label htmlFor="EingabeFeld">Task eingeben:  
             {/*input Feld für Text. Eingabe als value und mit OnChange funktion */}
-            <input type="text" id="task" placeholder="Add a Task"value={eingabe} onChange={OnChange}></input>
+            <input type="text" id="task" placeholder="Add a Task"value={eingabe} onChange={OnChange}></input></label>
+           <label htmlFor="Hinzufügen">
             {/*input Feld für Submit. Mit OnClick funktion */}
-            <input type="submit"value="Add" onClick={Click}></input>
+            <input type="submit"value="Add" onClick={Click}></input></label>
         </form>
     )
 
