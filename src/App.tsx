@@ -7,13 +7,13 @@ import TodoList from './components/TodoList';
 
 export type Task = {
   id: number,
-  title: String,
+  title: string,
   complete: boolean;
 }
+const emptyTask: Task = {"title":"", "complete": false, "id": 0}; 
 
 function App() {
-  const [inputs, SetInputs]=useState("");
-
+  const [tasktoEdit, SetTasktoEdit]=useState<Task>(emptyTask)
   const[task, SetTasks] = useState<Task[]>([]);
 
     useEffect(() =>{
@@ -32,12 +32,18 @@ function App() {
         })
     }
 
+    function postTask(tasktoPost: Task){
+        axios.post<Task>("http://localhost:3001/tasks", tasktoPost).then(() =>{
+          loaddata();
+        })
+        
+    }
 
 
   return (
     <div className="App">
       <h1 id="title">Meine Todo Liste</h1>
-      <InputField input={inputs}/>
+      <InputField input={tasktoEdit} addTask={postTask}/>
       <TodoList tasks={task} deleteTask={deleteTask}/>
     </div>
   );

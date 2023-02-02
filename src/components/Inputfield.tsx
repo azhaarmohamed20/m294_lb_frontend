@@ -1,17 +1,23 @@
 import React, { useState } from "react";
+import { Task } from "../App";
 
 
 export interface Inputprops{
-    input: String,
+    input: Task,
+    addTask: (task: Task)=> void;
 }
 
+const emptyTask : Task ={"title": "", "complete": false, "id": 0}
 
 function InputField(props: Inputprops){
     // UseState für Eingabe
-    const [eingabe, SetEingabe]=useState("");
+    const [eingabe, SetEingabe]=useState(props.input ?? emptyTask);
     // OnChange um eingabe zu verarbeiten
-    const OnChange = (event: { target: { value: React.SetStateAction<string>; }; }) =>{
-        SetEingabe(event.target.value);
+    const OnChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
+        //SetEingabe(event.target.value);
+        const {name, value} = event.target;
+        SetEingabe({...eingabe, [name]: value})
+
     }
 
     // OnClick um ein Event beim Mouse Klick zu triggern
@@ -19,17 +25,17 @@ function InputField(props: Inputprops){
         // Eingabe in Konsole machen
         console.log(eingabe);
         // Feld Leeren
-        SetEingabe("");
+        SetEingabe(emptyTask);
     }
 
     return(
         <form>
             <label htmlFor="EingabeFeld">Task eingeben:  
             {/*input Feld für Text. Eingabe als value und mit OnChange funktion */}
-            <input type="text" id="task" placeholder="Add a Task"value={eingabe} onChange={OnChange}></input></label>
+            <input type="text" id="task" name="title" placeholder="Add a Task" value={eingabe.title} onChange={OnChange}></input></label>
            <label htmlFor="Hinzufügen">
             {/*input Feld für Submit. Mit OnClick funktion */}
-            <input type="submit"value="Add" onClick={Click}></input></label>
+            <input type="submit"value="Add" onClick={() =>props.addTask(eingabe)}></input></label>
         </form>
     )
 
