@@ -6,7 +6,7 @@ export interface Inputprops{
 }
 
 
-const InputField: React.FC<Inputprops> = (input) =>{
+function InputField(props: Inputprops){
     // UseState für Eingabe
     const [eingabe, SetEingabe]=useState("");
     // OnChange um eingabe zu verarbeiten
@@ -23,12 +23,13 @@ const InputField: React.FC<Inputprops> = (input) =>{
     }
 
     return(
-        <div>
+        <form>
+            <label htmlFor="EingabeFeld">Task eingeben: </label>
             {/*input Feld für Text. Eingabe als value und mit OnChange funktion */}
             <input type="text" id="task" placeholder="Add a Task"value={eingabe} onChange={OnChange}></input>
             {/*input Feld für Submit. Mit OnClick funktion */}
             <input type="submit"value="Add" onClick={Click}></input>
-        </div>
+        </form>
     )
 
 }
