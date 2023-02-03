@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -36,7 +36,19 @@ const Index = () => {
         setIsLoggedIn(true);
       })
   }
+
+  
+  
   const token = localStorage.getItem("token");
+  useEffect(()=>{
+      if (token){
+        setIsLoggedIn(true);
+      }else{
+        setIsLoggedIn(false);
+      }
+  })
+  
+
   function verfiyLogin(){
       axios.get("http://localhost:3001/auth/jwt/verify", {
         headers:{"Authorization": "Bearer " +token}
@@ -47,6 +59,8 @@ const Index = () => {
       })
   }
 
+
+  
   return (
     <React.StrictMode>
       {isLoggedIn ? <App /> : <Login input={logintopost} setIsLoggedIn={setIsLoggedIn} addinput={postLogin} />}
