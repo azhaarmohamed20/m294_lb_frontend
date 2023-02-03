@@ -15,7 +15,7 @@ function Login(props:LoginProps){
     
 
 
-    const handleChange = (event: React.ChangeEvent<HTMLFormElement>) =>{    
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{    
         event.preventDefault();
         const {name, value} = event.target;
         Setlogin({...login, [name]: value});
@@ -28,15 +28,18 @@ function Login(props:LoginProps){
         props.addinput(login);
     }
     
+    
 
     return(
         <div>
             <h1>Log in</h1>
             <p>Das passwort muss 8 Characters lang sein.</p>
-            <form onChange={handleChange} onSubmit={onFormSubmit}>
-                <input type="email" name='email' value={login.email} required ></input>
+            <form  onSubmit={onFormSubmit}>
+                <label htmlFor='Email'>Email: </label>
+                <input type="email" name='email' value={login.email} onChange={handleChange} required ></input>
                 <br></br>
-                <input type="password" name='password' value={login.password} pattern="\S*" required  ></input>
+                <label htmlFor='Password'>Passwort: </label>
+                <input type="password" name='password' value={login.password} pattern="\S*" required  onChange={handleChange} ></input>
                 <input type="submit" value="Submit" ></input>
             </form>
         </div>

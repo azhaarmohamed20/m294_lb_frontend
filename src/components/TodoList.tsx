@@ -7,12 +7,16 @@ export interface HandleProps{
     editTask: (task: Task) => void;
 }
 
+
 function TodoList(props: HandleProps){
+    
+
+
     return(
         <form className="form">
         <div id="lielement">
             {props.tasks.map((todo:Task)=>(
-            <li key={todo.id} >{todo.title}<button onClick={()=> props.deleteTask(todo)} className="libutton">delete</button><button onClick={() => props.editTask(todo)} className="libutton">Edit</button></li>
+            <li key={todo.id} >{todo.title}<button onClick={(e)=> {e.preventDefault();props.deleteTask(todo);}} className="libutton">delete</button><button onClick={(e) =>{ e.preventDefault();props.editTask(todo);}} className="libutton">Edit</button></li>
             ))}
         </div></form>
     )
