@@ -37,8 +37,8 @@ const Index = () => {
       })
   }
 
-  
-  
+
+
   const token = localStorage.getItem("token");
   useEffect(()=>{
       if (token){
@@ -47,8 +47,8 @@ const Index = () => {
         setIsLoggedIn(false);
       }
   })
-  
 
+  
   function verfiyLogin(){
       axios.get("http://localhost:3001/auth/jwt/verify", {
         headers:{"Authorization": "Bearer " +token}
