@@ -30,12 +30,14 @@ function InputField(props: Inputprops){
 
     return(
         <form className="form">
-            <label htmlFor="EingabeFeld">Task eingeben:  </label>
+            <label htmlFor="EingabeFeld" id="eingabelbl">Task eingeben:</label>
             {/*input Feld für Text. Eingabe als value und mit OnChange funktion */}
             <input type="text" id="task" name="title" placeholder="Add a Task" value={eingabe.title} onChange={OnChange}></input>
+
            <label htmlFor="Hinzufügen"></label>
             {/*input Feld für Submit. Mit OnClick funktion */}
-            <input type="submit"value="Add" onClick={() =>props.addTask(eingabe)}></input>
+
+            <input type="submit"value="Add" onClick={() =>props.addTask(eingabe)} id="eingabe"></input>
         </form>
     )
 
