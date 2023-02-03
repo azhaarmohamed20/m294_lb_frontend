@@ -54,7 +54,79 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 # Git Log
-commit d88881fea6b5041142470e384bb0101aa830bfb3 (HEAD -> master)
+commit 1904edebdc0e7a0a97528fc6224d7f490f00c61b
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 16:23:39 2023 +0100
+
+    eslint änderungen gemacht
+
+commit a75925d0070a614de5fdfe9f4e8e9c6dfecc9899
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 16:20:02 2023 +0100
+
+    package.json um eslint erweitert
+
+commit 4357695bc17fbf462572c92b3182f5f70253e180
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 16:15:07 2023 +0100
+
+    app.tsx gestylet
+
+commit 1705ac8407d0fb330310c11cc1faf62d2bc5528f
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 16:13:44 2023 +0100
+
+    error message für gemacht
+
+commit 72f3fa994f823019ce38bb089a78c4413e87609b
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 16:11:29 2023 +0100
+
+    error message für inputfield gemacht
+
+commit d7dc2e7666d1164d9439e61783c5f9d004c9b427
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 15:59:58 2023 +0100
+
+    kleine anpassung
+
+commit d8555dd4062be0e834a6570c28b36238f40dae28
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 15:53:34 2023 +0100
+
+    Fehler korrigiert. Logoutbutton eingefügt
+
+commit f1b7d180c086d81a1e9e2338b180a71f2425c397
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 15:52:56 2023 +0100
+
+    Useeffect für Login eingefügt
+
+commit 4f5eba49e6a6afc8b201171a018478f8cbe24616
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 15:52:38 2023 +0100
+
+    Fehler im Login behoben
+
+commit c00c40a90f3616c1d2e1addb6f053fe7924d905b
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 14:46:08 2023 +0100
+
+    Token wird validiert
+
+commit d70d81f99627a4cff2a15c10ec19b30ef7fa983b
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 13:46:15 2023 +0100
+
+    Token wird jetzt gespeichert
+
+commit 2d0c71de5089e3523279c2e8bcff3fb87889bc3c
+Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
+Date:   Fri Feb 3 13:34:12 2023 +0100
+
+    ReadMe.md Updated
+
+commit d88881fea6b5041142470e384bb0101aa830bfb3
 Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
 Date:   Fri Feb 3 12:47:29 2023 +0100
 
@@ -66,7 +138,7 @@ Date:   Fri Feb 3 11:02:50 2023 +0100
 
     Login erster Schritt implmentiert
 
-commit 9bb488cc5b20877539bcaa4a4b008d318d3c5312 (origin/master, origin/HEAD)
+commit 9bb488cc5b20877539bcaa4a4b008d318d3c5312
 Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
 Date:   Fri Feb 3 09:04:52 2023 +0100
 
@@ -170,30 +242,6 @@ Date:   Thu Feb 2 09:43:10 2023 +0100
 
 commit 56024f67144cea2f6e44f54aae16fee4c44214b7
 Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
-:
-
-    GET und DELETE Request fertig implementiert
-
-commit 744dc181318a53b1096a0861411f819c3f54a11e
-Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
-Date:   Thu Feb 2 13:03:58 2023 +0100
-
-    Get und Delete Request eingefügt.
-
-commit 8b75ef665905b5d62287fea10d2f301bce2f4ddd
-Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
-Date:   Thu Feb 2 10:31:15 2023 +0100
-
-    axios installiert
-
-commit 18d40fb211faf155894b8e1cdfffff7c6880d7c7
-Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
-Date:   Thu Feb 2 09:43:10 2023 +0100
-
-    OnChange und OnClick Funktionen implementiert
-
-commit 56024f67144cea2f6e44f54aae16fee4c44214b7
-Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
 Date:   Thu Feb 2 09:08:33 2023 +0100
 
     Css file hinzugefügt
@@ -245,7 +293,6 @@ Author: Azhaar Mohamed <112543567+azhaarmohamed20@users.noreply.github.com>
 Date:   Wed Feb 1 16:03:03 2023 +0100
 
     Initialize project using Create React App
-(END)
 
 
 
