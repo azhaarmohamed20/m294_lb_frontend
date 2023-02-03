@@ -14,32 +14,40 @@ const emptyTask: Task = {"title":"", "complete": false, "id": 0};
 function App() {
   const [tasktoEdit, SetTasktoEdit]=useState<Task>(emptyTask)
   const[task, SetTasks] = useState<Task[]>([]);
-
+  const token = localStorage.getItem("token");
     useEffect(() =>{
         loaddata();
     },[]);
 
     function loaddata (){
-        axios.get<Task[]>("http://localhost:3001/tasks").then((response)=>{
+        axios.get<Task[]>("http://localhost:3001/auth/jwt/tasks", {
+          headers:{"Authorization": "Bearer " +token}
+        }).then((response)=>{
             SetTasks(response.data);
         });
     }
 
     function deleteTask(tasktodelete: Task){
-        axios.delete("http://localhost:3001/task/" + tasktodelete.id ).then (() =>{
+        axios.delete("http://localhost:3001/auth/jwt/taks/" + tasktodelete.id,{
+          headers:{"Authorization": "Bearer " +token}
+        } ).then (() =>{
             loaddata();
         })
     }
 
     function postTask(tasktoPost: Task){
-        axios.post<Task>("http://localhost:3001/tasks", tasktoPost).then(() =>{
+        axios.post<Task>("http://localhost:3001/auth/jwt/tasks", tasktoPost, {
+          headers:{"Authorization": "Bearer " +token}
+        }).then(() =>{
           loaddata();
         })
         
     }
 
     function editTask (tasktoEdit: Task){
-        axios.put<Task>("http://localhost:3001/tasks",tasktoEdit).then(() =>{
+        axios.put<Task>("http://localhost:3001/auth/jwt/tasks",tasktoEdit, {
+          headers:{"Authorization": "Bearer " +token}
+        }).then(() =>{
           loaddata();
           SetTasktoEdit(emptyTask);
         })

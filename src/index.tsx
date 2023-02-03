@@ -31,17 +31,19 @@ const Index = () => {
       })
       .then((response) =>{
         let token = response.data;
-        localStorage.setItem("token",  token.token);
+        localStorage.setItem("token", token.token);
+        verfiyLogin();
         setIsLoggedIn(true);
       })
   }
-  
+  const token = localStorage.getItem("token");
   function verfiyLogin(){
       axios.get("http://localhost:3001/auth/jwt/verify", {
-        headers:{Authorization: 'Bearer ${token$'}
+        headers:{"Authorization": "Bearer " +token}
       })
-      .then((response)=>{
+      .then(()=>{
         localStorage.getItem("token");
+        
       })
   }
 
