@@ -1,0 +1,11 @@
+
+/* Styling für TodoList*/
+#lielement{
+    display: grid;
+    justify-content: center;
+    list-style: none;
+}
+
+.libutton{
+    margin: 5px;
+}
