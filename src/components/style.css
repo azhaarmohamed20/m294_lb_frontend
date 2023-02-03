@@ -62,3 +62,10 @@
 #tasklbl{
     margin-top: 10px;
 }
+
+/*Styling für App.tsx*/
+#logbutton{
+    background-color: lightblue;
+    border-color: black;
+    border-radius: 15px;
+}
