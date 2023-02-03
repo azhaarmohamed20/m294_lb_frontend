@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Task } from "../App";
-
+import './style.css';
 
 export interface Inputprops{
     input: Task,
@@ -29,7 +29,7 @@ function InputField(props: Inputprops){
     }
 
     return(
-        <form>
+        <form className="form">
             <label htmlFor="EingabeFeld">Task eingeben:  </label>
             {/*input Feld für Text. Eingabe als value und mit OnChange funktion */}
             <input type="text" id="task" name="title" placeholder="Add a Task" value={eingabe.title} onChange={OnChange}></input>

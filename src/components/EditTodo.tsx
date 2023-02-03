@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Task } from "../App";
-
+import './style.css';
 export interface Editprops{
     tasks: Task,
     editTask: (task: Task) => void;
