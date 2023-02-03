@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import {LoginTodo} from '../index';
 

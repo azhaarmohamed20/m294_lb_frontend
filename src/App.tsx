@@ -15,9 +15,7 @@ function App() {
     const [tasktoEdit, SetTasktoEdit]=useState<Task>(emptyTask)
     const[task, SetTasks] = useState<Task[]>([]);
     const token = localStorage.getItem("token");
-    useEffect(() =>{
-        loaddata();
-    },[]);
+   
 
     function loaddata (){
         axios.get<Task[]>("http://localhost:3001/auth/jwt/tasks", {
@@ -26,6 +24,9 @@ function App() {
             SetTasks(response.data);
         });
     }
+    useEffect(() =>{
+      loaddata();
+    },[]);
 
     function deleteTask(tasktodelete: Task){
         axios.delete("http://localhost:3001/auth/jwt/task/" + tasktodelete.id,{

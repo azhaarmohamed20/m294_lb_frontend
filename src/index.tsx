@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import Login from './components/Login';
 import axios from 'axios';
-import { tokenToString } from 'typescript';
+
 
 
 const root = ReactDOM.createRoot(
@@ -22,14 +21,12 @@ const emptyLogin: LoginTodo ={"email": "", "password": ""}
 
 const Index = () => {
   const[logintopost, Setlogintopost]=useState<LoginTodo>(emptyLogin);
-  const [logged, Setlogged]=useState<LoginTodo[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function postLogin(logintoPost: LoginTodo){
       axios.post<JWTtoken>("http://localhost:3001/auth/jwt/sign", logintoPost, {
         headers:{Authorization: 'Bearer ${token}'}
-      })
-      .then((response) =>{
+      }).then((response) =>{
         let token = response.data;
         localStorage.setItem("token", token.token);
         verfiyLogin();
