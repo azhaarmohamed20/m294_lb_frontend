@@ -27,9 +27,8 @@ function EdittoDo(props: Editprops){
     
 
     return(
-        <form onSubmit={onFormSubmit}>
-            <label htmlFor="Ändern">Title: </label>{props.tasks.title}
-            <br></br>
+        <form onSubmit={onFormSubmit} className="form">
+            <label htmlFor="Ändern">Title:{props.tasks.title} </label>
             <input type="text" name="title" value={edits.title} onChange={onChange} required></input>
             <button>Save</button>
         </form>
