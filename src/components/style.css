@@ -27,17 +27,19 @@
 .form{
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
 
 /* Styling für TodoList*/
 #lielement{
-    display: grid;
-    justify-content: center;
     list-style: none;
+    margin-top: 0;
 }
 
 .libutton{
-    margin: 5px;
+    margin-left: 3px;
+    border-color: black;
+    background-color: lightblue;
+    border-radius: 15px;
 }
