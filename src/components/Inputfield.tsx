@@ -14,7 +14,6 @@ function InputField(props: Inputprops){
     const [eingabe, SetEingabe]=useState(props.input ?? emptyTask);
     // OnChange um eingabe zu verarbeiten
     const OnChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        //SetEingabe(event.target.value);
         const {name, value} = event.target;
         SetEingabe({...eingabe, [name]: value})
 

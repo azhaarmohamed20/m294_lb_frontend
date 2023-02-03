@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from './components/Login';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export type LoginTodo={
+  email: string,
+  password: string,
+}
+const emptyLogin: LoginTodo ={"email": "", "password": ""}
+
+const Index = () => {
+  const[logintopost, Setlogintopost]=useState<LoginTodo>(emptyLogin);
+  const [logged, Setlogged]=useState<LoginTodo[]>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  
+
+  function postLogin(logintoPost: LoginTodo){
+      axios.post<LoginTodo>("http://localhost:3001/auth/jwt/sign", logintoPost).then(() =>{
+       
+      })
+  }
+
+
+  return (
+    <React.StrictMode>
+      {isLoggedIn ? <App /> : <Login input={logintopost} setIsLoggedIn={setIsLoggedIn} addinput={postLogin} />}
+    </React.StrictMode>
+  );
+};
+
+root.render(<Index />);
+
