@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './components/Login';
 import axios from 'axios';
-import { verify } from 'crypto';
+import { tokenToString } from 'typescript';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
+export type JWTtoken={
+  token: string,
+}
 export type LoginTodo={
   email: string,
   password: string,
@@ -23,14 +26,13 @@ const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function postLogin(logintoPost: LoginTodo){
-      axios.post<LoginTodo>("http://localhost:3001/auth/jwt/sign", logintoPost, {
+      axios.post<JWTtoken>("http://localhost:3001/auth/jwt/sign", logintoPost, {
         headers:{Authorization: 'Bearer ${token}'}
       })
       .then((response) =>{
         let token = response.data;
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("token",  token.token);
         setIsLoggedIn(true);
-        verfiyLogin();
       })
   }
   

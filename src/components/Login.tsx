@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import {LoginTodo} from '../index';
 
-
 interface LoginProps {
     input: LoginTodo;
     addinput: (input: LoginTodo)=> void;
